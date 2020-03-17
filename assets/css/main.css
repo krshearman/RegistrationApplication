@@ -1,0 +1,153 @@
+/*------------------------------------------------------------
+Name: Kendall Shearman
+Assignment: Coding Seven
+Purpose: MVC Frameworks
+Notes: No questions or comments at this time
+--------------------------------------------------------------*/
+
+/*Defaults*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+
+}
+
+/*Mobile-First CSS*/
+
+/* Nav, hero image, main*/
+
+
+.nav-home {
+    font-size: 150%;
+}
+
+
+/* Contact form */
+#msg {
+
+    width: 80%;
+    text-align: center;
+    color: #343a40;
+    font-weight: bold;
+    font-size: 120%;
+    margin: 50px auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.main-gallery p {
+    text-align: center;
+    font-size: 125%;
+}
+
+.contact-form {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    padding-bottom: 75px;
+}
+
+
+.my-button {
+    color: white;
+    background-color: darkorchid;
+    border: none;
+}
+
+.my-button:hover {
+    text-decoration: none;
+    color: white;
+    background-color: orchid;
+}
+
+/* Gallery */
+
+.fit-image {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.main-gallery {
+    padding-top: 50px;
+
+}
+
+.custom-main {
+    height: 100vh;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.my-rect {
+    width: 100%;
+    height: 70%;
+    background-color: #777;
+}
+
+.my-features {
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
+
+/* Footer */
+
+
+footer {
+    background-color: #343a40;
+    height: 75px;
+    color: lightgray;
+    text-align: center;
+    /*margin-top: 25px;*/
+}
+
+footer p {
+    padding-top: 30px;
+}
+
+footer a {
+    text-decoration: none;
+    color: lightgray;
+}
+
+footer a:hover {
+    color: #ecdbff;
+    text-decoration: none;
+
+}
+
+/* CSS for screen sizes larger than 480px */
+
+@media screen and (min-width: 480px) {
+
+    footer {
+        background-color: #343a40;
+        height: 75px;
+        color: lightgray;
+        text-align: center;
+        /*margin-top: 25px;*/
+    }
+
+    footer p {
+        padding-top: 25px;
+    }
+}
+
+
+
+@media screen and (min-width: 600px) {
+    .contact-form {
+        width: 75%;
+        margin: 0 auto;
+        height: auto;
+
+    }
+
+    #msg {
+        width: 50%;
+    }
+}
+
