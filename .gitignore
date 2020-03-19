@@ -9,4 +9,9 @@ application/logs/*
 .htaccess
 /.idea/
 
+.idea/
 .idea/workspace.xml
+.idea/coding7.com.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
