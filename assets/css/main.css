@@ -171,3 +171,9 @@ footer a:hover {
     }
 }
 
+@media screen and (min-width: 992px) {
+    .dd-menu a {
+        color: white;
+    }
+}
+
