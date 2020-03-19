@@ -7,3 +7,6 @@ application/logs/*
 !application/*/.htaccess
 
 .htaccess
+/.idea/
+
+.idea/workspace.xml
