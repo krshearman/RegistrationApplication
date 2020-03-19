@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b83c05b-5028-48b4-bb69-882c2da4535a" name="Default Changelist" comment="" />
+    <list default="true" id="2b83c05b-5028-48b4-bb69-882c2da4535a" name="Default Changelist" comment="/* Created a user directory in views&#10;/* Created a User controller&#10;/* Adjusted routing (but not sure if it's correct)&#10;&#10;/* PORTABILITY ISSUE CREATED IN HEADER. SEE NOTES.">
+      <change afterPath="$PROJECT_DIR$/application/controllers/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/pages/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/users/signin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/templates/header.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,7 +52,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/views/users" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -55,11 +63,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/application/views/users" />
       <recent name="$PROJECT_DIR$/assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/application/views/pages" />
       <recent name="$PROJECT_DIR$/application/views/users" />
+      <recent name="$PROJECT_DIR$/application/views/pages" />
       <recent name="$PROJECT_DIR$/assets/php" />
     </key>
   </component>
@@ -109,6 +118,8 @@
       <workItem from="1584479825430" duration="56000" />
       <workItem from="1584479996502" duration="35000" />
       <workItem from="1584480480268" duration="56000" />
+      <workItem from="1584554244810" duration="7027000" />
+      <workItem from="1584579802327" duration="1976000" />
     </task>
     <task id="LOCAL-00001" summary="/*Added unversioned files">
       <created>1583677325650</created>
@@ -198,21 +209,22 @@
     <MESSAGE value="/* Started working on email controller" />
     <MESSAGE value="/* Converted email.php to Sendemail controller with send function&#10;/* Removed unnecessary files and code" />
     <MESSAGE value="/* Added forgotten comment headers to controllers, etc." />
-    <option name="LAST_COMMIT_MESSAGE" value="/* Added forgotten comment headers to controllers, etc." />
+    <MESSAGE value="/* Created a user directory in views&#10;/* Created a User controller&#10;/* Adjusted routing (but not sure if it's correct)&#10;&#10;/* PORTABILITY ISSUE CREATED IN HEADER. SEE NOTES." />
+    <option name="LAST_COMMIT_MESSAGE" value="/* Created a user directory in views&#10;/* Created a User controller&#10;/* Adjusted routing (but not sure if it's correct)&#10;&#10;/* PORTABILITY ISSUE CREATED IN HEADER. SEE NOTES." />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="212" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583676430357">
       <screen x="70" y="27" width="1370" height="873" />
     </state>
     <state x="488" y="212" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/70.27.1370.873@70.27.1370.873" timestamp="1583676430357" />
-    <state x="317" y="27" width="865" height="873" key="CommitChangelistDialog2" timestamp="1584125050403">
+    <state x="317" y="27" width="865" height="873" key="CommitChangelistDialog2" timestamp="1584581777932">
       <screen x="70" y="27" width="1370" height="873" />
     </state>
-    <state x="317" y="27" width="865" height="873" key="CommitChangelistDialog2/70.27.1370.873@70.27.1370.873" timestamp="1584125050403" />
-    <state x="481" y="277" width="537" height="394" key="NewPhpClassDialog" timestamp="1584471912876">
+    <state x="317" y="27" width="865" height="873" key="CommitChangelistDialog2/70.27.1370.873@70.27.1370.873" timestamp="1584581777932" />
+    <state x="481" y="277" width="641" height="401" key="NewPhpClassDialog" timestamp="1584555793338">
       <screen x="70" y="27" width="1370" height="873" />
     </state>
-    <state x="481" y="277" width="537" height="394" key="NewPhpClassDialog/70.27.1370.873@70.27.1370.873" timestamp="1584471912876" />
+    <state x="481" y="277" width="641" height="401" key="NewPhpClassDialog/70.27.1370.873@70.27.1370.873" timestamp="1584555793338" />
     <state x="550" y="389" width="399" height="156" key="NewPhpFileDialog" timestamp="1584465990562">
       <screen x="70" y="27" width="1370" height="873" />
     </state>
@@ -225,9 +237,9 @@
       <screen x="70" y="27" width="1370" height="873" />
     </state>
     <state x="350" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2/70.27.1370.873@70.27.1370.873" timestamp="1584125062694" />
-    <state x="411" y="291" key="com.intellij.ide.util.TipDialog" timestamp="1584483769821">
+    <state x="411" y="291" key="com.intellij.ide.util.TipDialog" timestamp="1584579805351">
       <screen x="70" y="27" width="1370" height="873" />
     </state>
-    <state x="411" y="291" key="com.intellij.ide.util.TipDialog/70.27.1370.873@70.27.1370.873" timestamp="1584483769821" />
+    <state x="411" y="291" key="com.intellij.ide.util.TipDialog/70.27.1370.873@70.27.1370.873" timestamp="1584579805351" />
   </component>
 </project>
