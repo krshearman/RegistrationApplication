@@ -26,7 +26,11 @@
                                     </div>
                                     <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2 my-button" type="submit">Sign in</button>
                                     <div class="text-center">
-                                        <a class="small" href="#">Forgot password?</a></div>
+                                        <a class="small" href="#">Forgot password?</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="<?php echo base_url(); ?>users/register">New User? Register Now!</a>
+                                    </div>
                                 </form>
                             </div>
                         </div>

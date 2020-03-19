@@ -10,7 +10,7 @@ class Users extends CI_Controller {
         $data['title'] = ucfirst($page);
 
         $this->load->view('templates/header', $data);
-        $this->load->view('users/signin', $data);
+        $this->load->view('users/'.$page, $data);
         $this->load->view('templates/footer', $data);
 
         } else {
