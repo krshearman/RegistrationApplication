@@ -2,10 +2,10 @@
 
 
 class Users extends CI_Controller{
-    public function __construct() {
+    /*public function __construct() {
         parent::__construct();
         $this->load->library('form_validation');
-    }
+    }*/
 
     public function register()
     {
@@ -25,14 +25,20 @@ class Users extends CI_Controller{
             $this->load->view('templates/footer', $data);
         } else {
             // Encrypt password
-            /*$enc_password = md5($this->input->post('password'));
+            // Encrypt password
+            $this->load->model('user_model');
+            $enc_password = md5($this->input->post('password'));
 
             $this->user_model->register($enc_password);
 
             // Set message
-            $this->session->set_flashdata('user_registered', 'You are now registered and can log in');*/
+            $this->session->set_flashdata('user_registered', 'You are now registered and can log in');
 
-            redirect('pages');
+
+
+            redirect('/users/register');
+           /* echo ('Success');*/
+            /*die('Continue');*/
         }
     }
 }
