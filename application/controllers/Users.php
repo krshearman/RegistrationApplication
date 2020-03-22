@@ -13,10 +13,10 @@ class Users extends CI_Controller{
 
         $data['title'] = 'Sign Up';
 
-        $this->form_validation->set_rules('username', 'Username', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required');
+        $this->form_validation->set_rules('username', 'Username', 'required|is_unique[users.username]');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
         $this->form_validation->set_rules('emailconf', 'Confirm Email', 'matches[email]');
-        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
         $this->form_validation->set_rules('passwordconf', 'Confirm Password', 'matches[password]');
 
         if ($this->form_validation->run() == FALSE) {
@@ -35,9 +35,9 @@ class Users extends CI_Controller{
             $this->session->set_flashdata('user_registered', 'You are now registered and can log in');
 
 
-
+            //Eventually redirect this to signin
             redirect('/users/register');
-           /* echo ('Success');*/
+
             /*die('Continue');*/
         }
     }

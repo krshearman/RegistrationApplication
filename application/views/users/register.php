@@ -8,6 +8,12 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-9 col-lg-8 mx-auto">
+                                <div>
+                                    <!-- Flash messages -->
+                                    <?php if($this->session->flashdata('user_registered')): ?>
+                                        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>'; ?>
+                                    <?php endif; ?>
+                                </div>
                                 <h3 class="login-heading mb-4">Register</h3>
                                 <?php echo validation_errors(); ?>
 
@@ -15,17 +21,17 @@
                                     <div class="form-label-group">
                                         <input type="text" id="username" name="username" class="form-control" placeholder="User Name" autofocus>
                                         <label for="username">User Name</label>
-                                        <div class="checks">
+                                       <!-- <div class="checks">
                                             <a class="small" href="#">Check Availability</a>
-                                        </div>
+                                        </div>-->
                                         <br>
                                     </div>
                                     <div class="form-label-group">
                                         <input type="text" id="email" name="email" class="form-control" placeholder="Email address" autofocus>
                                         <label for="email">Email address</label>
-                                        <div class="checks">
+                                        <!--<div class="checks">
                                             <a class="small" href="#">Check Existence</a>
-                                        </div>
+                                        </div>-->
                                         <br>
                                     </div>
 
@@ -38,7 +44,7 @@
                                         <input type="password" id="password" name="password" class="form-control" placeholder="Password">
                                         <label for="password">Password</label>
                                         <div class="checks">
-                                            <a class="small" href="#">At least 8 characters | 1 upper | 1 lower | 1 symbol</a>
+                                            <a class="small" href="#">At least 8 characters</a>
                                         </div>
                                         <br>
                                     </div>
