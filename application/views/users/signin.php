@@ -8,16 +8,19 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-9 col-lg-8 mx-auto">
+                                <?php echo validation_errors(); ?>
+
+                                <?php echo form_open('users/signin'); ?>
                                 <h3 class="login-heading mb-4">Sign in here!</h3>
                                 <form>
                                     <div class="form-label-group">
-                                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                                        <label for="inputEmail">Email address</label>
+                                        <input type="text" id="username" name="username" class="form-control" placeholder="Username" autofocus>
+                                        <label for="username">Username</label>
                                     </div>
 
                                     <div class="form-label-group">
-                                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                                        <label for="inputPassword">Password</label>
+                                        <input type="password" id="password" name="password" class="form-control" placeholder="Password">
+                                        <label for="password">Password</label>
                                     </div>
 
                                     <div class="custom-control custom-checkbox mb-3">
@@ -31,7 +34,7 @@
                                     <div class="text-center">
                                         <a class="small" href="<?php echo base_url(); ?>users/register">New User? Register Now!</a>
                                     </div>
-                                </form>
+                                    <?php echo form_close(); ?>
                             </div>
                         </div>
                     </div>

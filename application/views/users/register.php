@@ -13,6 +13,12 @@
                                     <?php if($this->session->flashdata('user_registered')): ?>
                                         <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>'; ?>
                                     <?php endif; ?>
+                                    <?php if($this->session->flashdata('user_loggedin')): ?>
+                                        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedin').'</p>'; ?>
+                                    <?php endif; ?>
+                                    <?php if($this->session->flashdata('login_failed')): ?>
+                                        <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('login_failed').'</p>'; ?>
+                                    <?php endif; ?>
                                 </div>
                                 <h3 class="login-heading mb-4">Register</h3>
                                 <?php echo validation_errors(); ?>
