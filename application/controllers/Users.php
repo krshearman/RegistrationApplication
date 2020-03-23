@@ -57,7 +57,7 @@ class Users extends CI_Controller{
             // Get username
             $username = $this->input->post('username');
             // Get and encrypt the password
-            $password = md5($this->input->post('password'));
+            $password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 
             // Login user
             $user_id = $this->user_model->signin($username, $password);
