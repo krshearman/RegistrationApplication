@@ -25,8 +25,9 @@
 
             $result = $this->db->get('users');
 
-            if($result->num_rows() == 1){
-                return $result->row(0)->id;
+            if (!empty($result) && password_verify('password', $password)) {
+                // if this username exists, and the input password is verified using password_verify
+                return $result;
             } else {
                 return false;
             }
