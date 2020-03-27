@@ -43,6 +43,27 @@ Notes: No questions or comments at this time
     float: right;
     padding-top: 5px;
     margin-right: 10px;
+    color: #4fa8d0;
+}
+
+.checks a{
+    color: #4fa8d0;
+}
+
+.checks a:hover {
+    text-decoration: none;
+}
+
+#reg-msg {
+
+    width: 80%;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-size: 120%;
+    margin: 50px auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 

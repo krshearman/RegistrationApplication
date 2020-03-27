@@ -2,21 +2,17 @@
 
 
 class Users extends CI_Controller{
-    /*public function __construct() {
-        parent::__construct();
-        $this->load->library('form_validation');
-    }*/
 
     public function register(){
 
 
         $data['title'] = 'Sign Up';
 
-        $this->form_validation->set_rules('username', 'Username', 'required|is_unique[users.username]');
+        /*$this->form_validation->set_rules('username', 'Username', 'required|is_unique[users.username]');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
         $this->form_validation->set_rules('emailconf', 'Confirm Email', 'matches[email]');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
-        $this->form_validation->set_rules('passwordconf', 'Confirm Password', 'matches[password]');
+        $this->form_validation->set_rules('passwordconf', 'Confirm Password', 'matches[password]');*/
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('templates/header', $data);
@@ -24,8 +20,7 @@ class Users extends CI_Controller{
             $this->load->view('templates/footer', $data);
         } else {
             // Encrypt password
-            // Encrypt password
-            $this->load->model('user_model');
+            /*$this->load->model('user_model');
             //$enc_password = md5($this->input->post('password'));
 
             $enc_password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
@@ -38,9 +33,9 @@ class Users extends CI_Controller{
 
             //Eventually redirect this to signin
 
-            redirect('users/register');
+            redirect('users/register');*/
 
-            /*die('Continue');*/
+            die('Continue');
         }
     }
 

@@ -23,12 +23,12 @@ Notes: No questions or comments at this time
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css" type="text/css">
 
         <!-- Favicon -->
-        <link rel="icon" href="android-chrome-192x192.png">
-        <link rel="icon" href="android-chrome-512x512.png">
-        <link rel="icon" href="apple-touch-icon.png">
-        <link rel="icon" href="favicon-16x16.png">
-        <link rel="icon" href="favicon-32x32.png">
-        <link rel="icon" href="favicon.ico">
+        <link rel="icon" href="<?php echo base_url(); ?>android-chrome-192x192.png">
+        <link rel="icon" href="<?php echo base_url(); ?>android-chrome-512x512.png">
+        <link rel="icon" href="<?php echo base_url(); ?>apple-touch-icon.png">
+        <link rel="icon" href="<?php echo base_url(); ?>favicon-16x16.png">
+        <link rel="icon" href="<?php echo base_url(); ?>favicon-32x32.png">
+        <link rel="icon" href="<?php echo base_url(); ?>favicon.ico">
 
         <!-- Scripts -->
         <script src="<?php echo base_url(); ?>assets/js/jquery-3.4.1.js"></script>
@@ -36,6 +36,7 @@ Notes: No questions or comments at this time
         <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/featherlight.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/jquery.waypoints.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/register.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
 
 
