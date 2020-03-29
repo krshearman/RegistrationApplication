@@ -46,8 +46,8 @@ $(document).ready(function () {
             errorMessage += "Please enter a valid email address that matches.<br>"
         }
 
-        if (password === "") {
-            errorMessage += "Password cannot be empty.<br>"
+        if (password === "" || !(validPassword(password))) {
+            errorMessage += "Password must be at least 8 characters and contain 1 upper, 1 lower, 1 symbol, 1 number.<br>"
         }
 
         if (passwordconf !== password || passwordconf === "") {
@@ -70,4 +70,18 @@ function validEmail(email) {
     var re =
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
+}
+
+
+function validPassword(password) {
+        var upperCase= new RegExp('[A-Z]');
+        var lowerCase= new RegExp('[a-z]');
+        var numbers = new RegExp('[0-9]');
+        var symbols = new RegExp('[_.,:;#$?!]');
+
+    if(password.match(upperCase) && password.match(lowerCase) &&
+        password.match(numbers) && password.match(symbols)) {
+       return true;
+
+    }
 }

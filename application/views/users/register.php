@@ -36,7 +36,7 @@
                                         <input type="text" id="username" name="username" class="form-control" placeholder="User Name" autofocus>
                                         <label for="username">Username</label>
                                        <div class="checks">
-                                            <p class="small">Must not be blank. Must be unique</p>
+                                            <p class="small">Must not be blank | Must be unique</p>
                                         </div>
                                         <br>
                                     </div>
@@ -44,7 +44,7 @@
                                         <input type="text" id="email" name="email" class="form-control" placeholder="Email address" autofocus>
                                         <label for="email">Email</label>
                                         <div class="checks">
-                                            <p class="small">Must not be blank. Must be valid</p>
+                                            <p class="small">Must not be blank | Must be valid</p>
                                         </div>
                                         <br>
                                     </div>
@@ -62,7 +62,7 @@
                                         <input type="password" id="password" name="password" class="form-control" placeholder="Password">
                                         <label for="password">Password</label>
                                         <div class="checks">
-                                            <p class="small">At least 8 characters | 1 upper | 1 lower | 1 symbol</p>
+                                            <p class="small">At least 8 characters | 1 upper | 1 lower | 1 symbol | 1 number</p>
                                         </div>
                                         <br>
                                     </div>
