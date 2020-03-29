@@ -5,7 +5,6 @@ class Users extends CI_Controller{
 
     public function register(){
 
-
         $data['title'] = 'Sign Up';
 
         /*$this->form_validation->set_rules('username', 'Username', 'required|is_unique[users.username]');
@@ -14,30 +13,42 @@ class Users extends CI_Controller{
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
         $this->form_validation->set_rules('passwordconf', 'Confirm Password', 'matches[password]');*/
 
-        if ($this->form_validation->run() == FALSE) {
+
+        if (empty($_POST)) {
             $this->load->view('templates/header', $data);
             $this->load->view('users/register', $data);
             $this->load->view('templates/footer', $data);
         } else {
-            // Encrypt password
-            /*$this->load->model('user_model');
-            //$enc_password = md5($this->input->post('password'));
 
-            $enc_password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+            if (!empty($_POST)) {
 
-            $this->user_model->register($enc_password);
+                $username = substr(strip_tags(trim($_POST['username'])), 0, 64);
+                $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ? $_POST['email'] : "";
+                $password = substr(strip_tags(trim($_POST['password'])), 0, 64);
 
-            // Set message
-            $this->session->set_flashdata('user_registered', 'You are now registered and can log in');
+                if (!empty($username) && !empty($email) && !empty($password)) {
+                    //Load Model
+                    $this->load->model('user_model');
+
+                    // Encrypt password
+                    $enc_password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+
+                    $this->user_model->register($enc_password);
+
+                    // Set message
+                    //$this->session->set_flashdata('user_registered', 'You are now registered and can log in');
 
 
-            //Eventually redirect this to signin
+                    //Eventually redirect this to signin
 
-            redirect('users/register');*/
+                    redirect('users/register');
 
-            die('Continue');
+                    //die('Continue');
+                }
+            }
         }
     }
+
 
     public function signin(){
         $data['title'] = 'Sign In';
@@ -80,5 +91,11 @@ class Users extends CI_Controller{
                 redirect('users/register');
             }
         }
+    }
+
+    public function validateForm(){
+        return false;
+
+
     }
 }

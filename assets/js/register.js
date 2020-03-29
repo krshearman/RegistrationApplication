@@ -56,14 +56,36 @@ $(document).ready(function () {
 
         if (errorMessage.length === 0) {
             $('#reg-msg').html("Registering...");
-        } else {
-            $('#reg-msg').html(errorMessage);
+
+            $.ajax({
+                url: 'register',
+                type: 'POST',
+                data: {username: username, email: email, password: password},
+                success: function (val) {
+                    if (val === "okay") {
+                        clearRegForm();
+                        $('#reg-msg').waypoint(function (direction) {
+                            $('#reg-msg').addClass('animated bounceInDown');
+
+                        }, {
+                            offset: '50%'
+
+                        });
+                        $('#reg-msg').css("border", "2px solid darkorchid");
+                        $('#reg-msg').css("background-color", "#e2ffff");
+                        $('#reg-msg').css("border-radius", "20px");
+                        $('#reg-msg').html('SENT!');
+
+                    } else {
+                        $('#reg-msg').html(errorMessage);
+                    }
+
+
+                }
+            });
         }
 
-
-        });
-
-
+    });
 });
 
 function validEmail(email) {
@@ -74,14 +96,15 @@ function validEmail(email) {
 
 
 function validPassword(password) {
-        var upperCase= new RegExp('[A-Z]');
-        var lowerCase= new RegExp('[a-z]');
-        var numbers = new RegExp('[0-9]');
-        var symbols = new RegExp('[_.,:;#$?!]');
+    var upperCase = new RegExp('[A-Z]');
+    var lowerCase = new RegExp('[a-z]');
+    var numbers = new RegExp('[0-9]');
+    var symbols = new RegExp('[_.,:;#$?!]');
 
-    if(password.match(upperCase) && password.match(lowerCase) &&
+    if (password.match(upperCase) && password.match(lowerCase) &&
         password.match(numbers) && password.match(symbols)) {
-       return true;
+        return true;
 
     }
 }
+
