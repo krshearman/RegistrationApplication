@@ -35,6 +35,8 @@ class Users extends CI_Controller{
 
                     $this->user_model->register($enc_password);
 
+
+
                     // Set message
                     //$this->session->set_flashdata('user_registered', 'You are now registered and can log in');
 
@@ -44,9 +46,11 @@ class Users extends CI_Controller{
                     redirect('users/register');
 
                     //die('Continue');
+                    //echo $response;
                 }
             }
         }
+
     }
 
 
