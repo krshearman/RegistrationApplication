@@ -34,7 +34,7 @@ class Users extends CI_Controller{
                     $enc_password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 
                     $this->user_model->register($enc_password);
-
+                    $response = 'okay';
 
 
                     // Set message
@@ -46,7 +46,7 @@ class Users extends CI_Controller{
                     redirect('users/register');
 
                     //die('Continue');
-                    //echo $response;
+                    echo $response;
                 }
             }
         }

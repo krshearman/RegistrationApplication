@@ -61,32 +61,64 @@ $(document).ready(function () {
                 url: 'register',
                 type: 'POST',
                 data: {username: username, email: email, password: password},
-                success: function (val) {
-                    if (val === "okay") {
-                        clearRegForm();
+                    success: function (data) {
+                        if (data) {
+                            clearRegForm();
+                            $('#reg-msg').waypoint(function (direction) {
+                                $('#reg-msg').addClass('animated bounceInDown');
+
+                            }, { offset: '50%'
+
+                            });
+                            $('#reg-msg').css("border", "2px solid darkorchid");
+                            $('#reg-msg').css("background-color", "#e2ffff");
+                            $('#reg-msg').css("border-radius", "20px");
+                            $('#reg-msg').html('You are now registered');
+
+                        } else {
+                            $('##reg-msg').waypoint(function (direction) {
+                                $('#reg-msg').addClass('animated bounceInDown');
+
+                            }, { offset: '50%'
+
+                            });
+                            $('#reg-msg').css("border", "2px solid darkorchid");
+                            $('#reg-msg').css("background-color", "#e2ffff");
+                            $('#reg-msg').css("border-radius", "20px");
+                            $('#reg-msg').html('SCRIPT ERROR - NOT SENT!');
+                        }
+                    },
+                    error: function () {
                         $('#reg-msg').waypoint(function (direction) {
                             $('#reg-msg').addClass('animated bounceInDown');
 
-                        }, {
-                            offset: '50%'
+                        }, { offset: '50%'
 
                         });
                         $('#reg-msg').css("border", "2px solid darkorchid");
                         $('#reg-msg').css("background-color", "#e2ffff");
                         $('#reg-msg').css("border-radius", "20px");
-                        $('#reg-msg').html('SENT!');
-
-                    } else {
-                        $('#reg-msg').html(errorMessage);
-                    }
-
-
+                        $('#reg-msg').html('SERVER ERROR - NOT SENT!');
+                    },
                 }
+            )
+        } else {
+            $('#reg-msg').waypoint(function (direction) {
+                $('#reg-msg').addClass('animated bounceInLeft');
+
+            }, { offset: '50%'
+
             });
+            $('#reg-msg').css("border", "2px solid darkorchid");
+            $('#reg-msg').css("background-color", "#e2ffff");
+            $('#reg-msg').css("border-radius", "20px");
+            $('#reg-msg').html(errorMessage);
         }
+            });
+
 
     });
-});
+
 
 function validEmail(email) {
     var re =
