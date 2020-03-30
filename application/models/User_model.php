@@ -5,11 +5,11 @@
 	class User_model extends CI_Model{
 
 
-        public function register($enc_password){
+        public function register($username, $email, $enc_password){
             // User data array
             $data = array(
-                'username' => $this->input->post('username'),
-                'email' => $this->input->post('email'),
+                'username' => $username,
+                'email' => $email,
                 'password' => $enc_password
 
             );

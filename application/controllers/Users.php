@@ -35,7 +35,7 @@ class Users extends CI_Controller{
                     // Encrypt password
                     $enc_password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 
-                    $this->user_model->register($enc_password);
+                    $this->user_model->register($username, $email, $enc_password);
                     //$response = 'okay';
 
 
