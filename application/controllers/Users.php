@@ -26,6 +26,8 @@ class Users extends CI_Controller{
                 $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ? $_POST['email'] : "";
                 $password = substr(strip_tags(trim($_POST['password'])), 0, 64);
 
+                //incorporate callbacks for check_username_exists() and check_email_exists
+
                 if (!empty($username) && !empty($email) && !empty($password)) {
                     //Load Model
                     $this->load->model('user_model');
