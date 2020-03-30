@@ -15,7 +15,7 @@
             );
 
             // Insert user
-            return $this->db->insert('users', $data);
+            $this->db->insert('users', $data);
         }
 
         public function signin($username, $password){
