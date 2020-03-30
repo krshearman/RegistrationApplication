@@ -85,7 +85,7 @@ $(document).ready(function () {
                             $('#reg-msg').css("border", "2px solid darkorchid");
                             $('#reg-msg').css("background-color", "#e2ffff");
                             $('#reg-msg').css("border-radius", "20px");
-                            $('#reg-msg').html('SCRIPT ERROR - NOT SENT!');
+                            $('#reg-msg').html('SCRIPT ERROR - NOT REGISTERED!');
                         }
                     },
                     error: function () {
@@ -98,7 +98,7 @@ $(document).ready(function () {
                         $('#reg-msg').css("border", "2px solid darkorchid");
                         $('#reg-msg').css("background-color", "#e2ffff");
                         $('#reg-msg').css("border-radius", "20px");
-                        $('#reg-msg').html('SERVER ERROR - NOT SENT!');
+                        $('#reg-msg').html('SERVER ERROR - NOT REGISTERED!');
                     },
                 }
             )
@@ -113,9 +113,9 @@ $(document).ready(function () {
             $('#reg-msg').css("background-color", "#e2ffff");
             $('#reg-msg').css("border-radius", "20px");
             $('#reg-msg').html(errorMessage);
-        }
-            });
+                }
 
+            });
 
     });
 
