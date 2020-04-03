@@ -61,8 +61,8 @@ $(document).ready(function () {
                 url: 'register',
                 type: 'POST',
                 data: {username: username, email: email, password: password},
-                    success: function (data) {
-                        if (data) {
+                    success: function (val) {
+                        if (val === 'okay') {
                             clearRegForm();
                             $('#reg-msg').waypoint(function (direction) {
                                 $('#reg-msg').addClass('animated bounceInDown');
@@ -75,8 +75,8 @@ $(document).ready(function () {
                             $('#reg-msg').css("border-radius", "20px");
                             $('#reg-msg').html('You are now registered');
 
-                        } else {
-                            $('##reg-msg').waypoint(function (direction) {
+                        } else if (val === 'error'){
+                            $('#reg-msg').waypoint(function (direction) {
                                 $('#reg-msg').addClass('animated bounceInDown');
 
                             }, { offset: '50%'
@@ -88,7 +88,7 @@ $(document).ready(function () {
                             $('#reg-msg').html('SCRIPT ERROR - NOT REGISTERED!');
                         }
                     },
-                    error: function () {
+                    error: function (val) {
                         $('#reg-msg').waypoint(function (direction) {
                             $('#reg-msg').addClass('animated bounceInDown');
 
