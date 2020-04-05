@@ -63,7 +63,7 @@ $(document).ready(function () {
             $('#msg').html("Sending...");
 
             $.ajax({
-                    url: 'Sendemail/send',
+                    url: 'Ajax/send',
                     type: 'POST',
                     data: {name: name, remail1: remail1, subject: subject, message: message},
                     success: function (val) {
