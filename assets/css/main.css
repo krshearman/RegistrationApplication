@@ -14,6 +14,7 @@ Notes: No questions or comments at this time
     font-family: 'Lato', sans-serif;
     font-size: 16px;
 
+
 }
 
 /*Mobile-First CSS*/
@@ -94,6 +95,9 @@ Notes: No questions or comments at this time
     padding-bottom: 75px;
 }
 
+.user-button a:hover{
+    text-decoration: transparent;
+}
 
 .my-button {
     color: white;
