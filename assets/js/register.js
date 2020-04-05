@@ -58,7 +58,7 @@ $(document).ready(function () {
             $('#reg-msg').html("Registering...");
 
             $.ajax({
-                url: 'register',
+                url: '../Ajax/register',
                 type: 'POST',
                 data: {username: username, email: email, password: password},
                     success: function (val) {
