@@ -31,13 +31,13 @@ Notes: No questions or comments at this time
         <link rel="icon" href="<?php echo base_url(); ?>favicon.ico">
 
         <!-- Scripts -->
-        <script src="<?php echo base_url(); ?>assets/js/jquery-3.4.1.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/popper.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/featherlight.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/jquery.waypoints.min.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/register.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/contact.js"></script>
+        <!--<script src="<?php /*echo base_url(); */?>assets/js/jquery-3.4.1.js"></script>
+        <script src="<?php /*echo base_url(); */?>assets/js/popper.min.js"></script>
+        <script src="<?php /*echo base_url(); */?>assets/js/bootstrap.min.js"></script>
+        <script src="<?php /*echo base_url(); */?>assets/js/featherlight.js"></script>
+        <script src="<?php /*echo base_url(); */?>assets/js/jquery.waypoints.min.js"></script>
+        <script src="<?php /*echo base_url(); */?>assets/js/register.js"></script>
+        <script src="<?php /*echo base_url(); */?>assets/js/contact.js"></script>-->
 
 
         <title><?= $title; ?></title>
