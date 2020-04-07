@@ -1,5 +1,5 @@
 <?php
-
+defined('BASEPATH') OR exit('Forbidden');
 
 class Ajax extends CI_Controller{
 

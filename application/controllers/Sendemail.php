@@ -1,5 +1,5 @@
 <?php
-
+defined('BASEPATH') OR exit('Forbidden');
 
 class Sendemail extends CI_Controller{
     /*public function mymail() {

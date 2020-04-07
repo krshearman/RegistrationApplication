@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('Forbidden');
 
 
 class Users extends CI_Controller{
@@ -24,7 +25,7 @@ class Users extends CI_Controller{
     }
 
 
-    //TODO: Re-write this function using custom script inside of the form_validation library
+    //TODO: Re-write this function using custom script instead of the form_validation library
     public function signin(){
         $data['title'] = 'Sign In';
 
