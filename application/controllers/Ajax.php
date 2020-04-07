@@ -72,4 +72,17 @@ class Ajax extends CI_Controller{
             }
         } echo $response;
     }
+
+    public function checkUsername(){
+        $response = 'error';
+        if(!empty($_POST)){
+            $this->load->model('user_model');
+            $username = substr(strip_tags(trim($_POST['username'])), 0, 64);
+            if($this->user_model->check_username_exists($username)){
+                $response = 'okay';
+            }
+        }
+        echo $response;
+    }
 }
+

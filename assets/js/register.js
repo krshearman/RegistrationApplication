@@ -11,12 +11,21 @@ function clearRegForm() {
     $('#reg-msg').html('<br>');
     $('#reg-msg').css("border", "none");
     $('#reg-msg').css("background-color", "white");
+    $('#uniqueuser').css("color","#4fa8d0");
+    $('#uniqueuser').html("Must not be blank | Must be unique");
 }
 
 $(document).ready(function () {
 
     $("#reg-clear").click(function () {
         clearRegForm();
+    });
+
+    $('#username').blur(function () {
+        let username = $('#username').val().trim();
+        if(username !== ""){
+            checkUser();
+        }
     });
 
     $('#reg-submit').click(function () {
@@ -124,6 +133,24 @@ function validEmail(email) {
     var re =
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
+}
+
+function checkUser(){
+    let username = $('#username').val().trim();
+    $.ajax({
+        url: '../Ajax/checkUsername',
+        type: 'POST',
+        data: {username: username},
+        success: function (val) {
+            if (val === 'okay'){
+                $('#uniqueuser').html("That username is available!");
+                $('#uniqueuser').css("color", "green");
+            }else {
+                $('#uniqueuser').html("That username already exists.");
+                $('#uniqueuser').css("color", "red");
+            }
+          }
+        })
 }
 
 

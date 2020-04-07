@@ -36,7 +36,7 @@
                                         <input type="text" id="username" name="username" class="form-control" placeholder="User Name" autofocus>
                                         <label for="username">Username</label>
                                        <div class="checks">
-                                            <p class="small">Must not be blank | Must be unique</p>
+                                            <p class="small" id="uniqueuser">Must not be blank | Must be unique</p>
                                         </div>
                                         <br>
                                     </div>
