@@ -164,7 +164,6 @@ function checkUser() {
 }
 
 function checkEmail(email){
-   // let email = $('#email').val().trim();
     $.ajax({
         url: '../Ajax/checkEmailUnique',
         type: 'POST',
@@ -180,8 +179,7 @@ function checkEmail(email){
             }
         }
     })
-    //$('#uniqueemail').html("That username is available!");
-    //$('#uniqueemail').css("color", "green");
+
 }
 
 function validPassword(password) {
