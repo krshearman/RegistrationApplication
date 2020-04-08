@@ -33,7 +33,7 @@
 
                                 <form id="register-form" method="" action="">
                                     <div class="form-label-group">
-                                        <input type="text" id="username" name="username" class="form-control" placeholder="User Name" autofocus>
+                                        <input type="text" id="username" name="username" class="form-control" placeholder="User Name">
                                         <label for="username">Username</label>
                                        <div class="checks">
                                             <p class="small" id="uniqueuser">Must not be blank | Must be unique</p>
@@ -41,16 +41,16 @@
                                         <br>
                                     </div>
                                     <div class="form-label-group">
-                                        <input type="text" id="email" name="email" class="form-control" placeholder="Email address" autofocus>
+                                        <input type="text" id="email" name="email" class="form-control" placeholder="Email address">
                                         <label for="email">Email</label>
                                         <div class="checks">
-                                            <p class="small">Must not be blank | Must be valid</p>
+                                            <p class="small" id="uniqueemail">Must not be blank | Must be valid</p>
                                         </div>
                                         <br>
                                     </div>
 
                                     <div class="form-label-group">
-                                        <input type="text" id="emailconf" name="emailconf"  class="form-control" placeholder="Confirm Email address" autofocus>
+                                        <input type="text" id="emailconf" name="emailconf"  class="form-control" placeholder="Confirm Email address">
                                         <label for="emailconf">Confirm Email</label>
                                         <div class="checks">
                                             <p class="small">Must match</p>

@@ -13,6 +13,8 @@ function clearRegForm() {
     $('#reg-msg').css("background-color", "white");
     $('#uniqueuser').css("color","#4fa8d0");
     $('#uniqueuser').html("Must not be blank | Must be unique");
+    $('#uniqueemail').css("color","#4fa8d0");
+    $('#uniqueemail').html("Must not be blank | Must be valid");
 }
 
 $(document).ready(function () {
@@ -21,10 +23,17 @@ $(document).ready(function () {
         clearRegForm();
     });
 
-    $('#username').blur(function () {
+    $('#username').focusout(function () {
         let username = $('#username').val().trim();
         if(username !== ""){
             checkUser();
+        }
+    });
+
+   $('#email').blur(function () {
+        let email = $('#email').val().trim();
+        if(email !== "" && validEmail(email)){
+            checkEmail(email);
         }
     });
 
@@ -135,24 +144,45 @@ function validEmail(email) {
     return re.test(email);
 }
 
-function checkUser(){
+function checkUser() {
     let username = $('#username').val().trim();
     $.ajax({
         url: '../Ajax/checkUsername',
         type: 'POST',
         data: {username: username},
         success: function (val) {
-            if (val === 'okay'){
+            console.log(val);
+            if (val === 'okay') {
                 $('#uniqueuser').html("That username is available!");
                 $('#uniqueuser').css("color", "green");
-            }else {
+            } else {
                 $('#uniqueuser').html("That username already exists.");
                 $('#uniqueuser').css("color", "red");
             }
-          }
-        })
+        }
+    })
 }
 
+function checkEmail(email){
+   // let email = $('#email').val().trim();
+    $.ajax({
+        url: '../Ajax/checkEmailUnique',
+        type: 'POST',
+        data: {email: email},
+        success: function (val) {
+            console.log(val);
+            if (val === 'okay'){
+                $('#uniqueemail').html("That email is available!");
+                $('#uniqueemail').css("color", "green");
+            } else {
+                $('#uniqueemail').html("That email is already in use.");
+                $('#uniqueemail').css("color", "red");
+            }
+        }
+    })
+    //$('#uniqueemail').html("That username is available!");
+    //$('#uniqueemail').css("color", "green");
+}
 
 function validPassword(password) {
     var upperCase = new RegExp('[A-Z]');

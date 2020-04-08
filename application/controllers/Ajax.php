@@ -84,5 +84,17 @@ class Ajax extends CI_Controller{
         }
         echo $response;
     }
+
+      public function checkEmailUnique(){
+        $response = 'error';
+        $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ? $_POST['email'] : "";
+        if($email !== ""){
+                $this->load->model('user_model');
+                if($this->user_model->check_email_exists($email)){
+                    $response = 'okay';
+                }
+            }
+            echo $response;
+        }
 }
 
