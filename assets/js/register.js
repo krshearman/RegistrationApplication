@@ -169,7 +169,7 @@ function checkEmail(email){
         type: 'POST',
         data: {email: email},
         success: function (val) {
-            console.log(val);
+            //console.log(val);
             if (val === 'okay'){
                 $('#uniqueemail').html("That email is available!");
                 $('#uniqueemail').css("color", "green");

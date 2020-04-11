@@ -96,5 +96,16 @@ class Ajax extends CI_Controller{
             }
             echo $response;
         }
+
+        public function sendResetLink(){
+             $response = 'error';
+             $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ? $_POST['email'] : "";
+             if ($email !== ""){
+                $response = 'okay';
+             }
+             echo $response;
+        }
+
+
 }
 
