@@ -74,7 +74,7 @@ $(document).ready(function () {
 
         }
 
-        if(errorMessage.length > 0){
+        if (errorMessage.length > 0){
         $('#forgotpass-msg').waypoint(function (direction) {
             $('#forgotpass-msg').addClass('animated bounceInLeft');
 

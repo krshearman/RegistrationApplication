@@ -106,6 +106,15 @@ class Ajax extends CI_Controller{
              echo $response;
         }
 
+        public function resetPass(){
+
+        }
+
+        public function createToken(){
+            //Alex sent you this - look in Google Hangouts conversation
+
+        }
+
 
 }
 
