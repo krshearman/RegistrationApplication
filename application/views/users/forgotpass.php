@@ -25,9 +25,7 @@
                                 </form>
                                 <button id="forgotpass-submit" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2 my-button" type="submit">Get Reset Link</button>
 
-                                <div class="checks">
-                                    <a class="small" id="reg-clear" href="#">Clear Form</a>
-                                </div>
+
                             </div>
                         </div>
                     </div>

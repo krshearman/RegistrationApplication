@@ -17,6 +17,7 @@ Notes: No questions or comments at this time
         <script src="<?php echo base_url(); ?>assets/js/jquery.waypoints.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/register.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/contact.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/forgotpass.js"></script>
 
     </body>
 </html>
