@@ -61,7 +61,7 @@ class Ajax extends CI_Controller{
             if (!empty($username) && !empty($email) && !empty($password)) {
                 if (($this->user_model->check_username_exists($username)) && ($this->user_model->check_email_exists($email))) {
                     //Load Model
-                    $this->load->model('user_model');
+                    //$this->load->model('user_model');
 
                     // Encrypt password
                     $enc_password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);

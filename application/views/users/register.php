@@ -33,8 +33,8 @@
 
                                 <form id="register-form" method="" action="">
                                     <div class="form-label-group">
-                                        <input type="text" id="username" name="username" class="form-control" placeholder="User Name">
-                                        <label for="username">Username</label>
+                                        <input type="text" id="username" name="username" class="form-control" placeholder="UserName">
+                                        <label for="username">UserName</label>
                                        <div class="checks">
                                             <p class="small" id="uniqueuser">Must not be blank | Must be unique</p>
                                         </div>

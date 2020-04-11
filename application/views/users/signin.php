@@ -28,10 +28,10 @@
                                         <label class="custom-control-label" for="customCheck1">Remember password</label>
                                     </div>
                                     <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2 my-button" type="submit">Sign in</button>
-                                    <div class="text-center">
-                                        <a class="small" href="#">Forgot password?</a>
+                                    <div class="text-center signinlinks">
+                                        <a class="small" href="<?php echo base_url(); ?>users/forgotpass">Forgot password?</a>
                                     </div>
-                                    <div class="text-center">
+                                    <div class="text-center signinlinks">
                                         <a class="small" href="<?php echo base_url(); ?>users/register">New User? Register Now!</a>
                                     </div>
                                     <?php echo form_close(); ?>

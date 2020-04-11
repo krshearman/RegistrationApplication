@@ -69,6 +69,22 @@ Notes: No questions or comments at this time
     padding-bottom: 20px;
 }
 
+#forgotpass-msg {
+
+    width: 80%;
+    text-align: center;
+    color: darkorchid;
+    font-weight: bold;
+    font-size: 120%;
+    margin: 0px auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.signinlinks a:hover {
+    text-decoration: none;
+}
+
 
 /* Contact form */
 #msg {
