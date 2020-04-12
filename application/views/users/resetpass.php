@@ -35,7 +35,9 @@
                                     </div>
                                 </form>
                                 <button id="resetpass-submit" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2 my-button" type="submit">Reset Your Password</button>
-
+                                <div class="checks">
+                                    <a class="small" id="resetpass-clear" href="#">Clear Form</a>
+                                </div>
 
                             </div>
                         </div>

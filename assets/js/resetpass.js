@@ -1,9 +1,19 @@
 "use strict";
 
+function clearResetForm() {
+    $('#password').val('');
+    $('#passwordconf').val('');
+    $('#resetpass-msg').html('<br>');
+    $('#resetpass-msg').css("border", "none");
+    $('#resetpass-msg').css("background-color", "white");
 
+}
 
 $(document).ready(function () {
-    //submit function here
+    $("#resetpass-clear").click(function () {
+        clearResetForm();
+    });
+
     $('#resetpass-submit').click(function () {
         console.log("clicked");
         var errorMessage = "";
@@ -31,7 +41,7 @@ $(document).ready(function () {
                 data:{password: password},
                     success: function (val) {
                         if (val === 'okay') {
-
+                            clearResetForm();
                             $('#resetpass-msg').waypoint(function (direction) {
                                 $('#resetpass-msg').addClass('animated bounceInDown');
 
