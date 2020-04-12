@@ -107,7 +107,12 @@ class Ajax extends CI_Controller{
         }
 
         public function resetPass(){
-
+            $response = 'error';
+            $password = substr(strip_tags(trim($_POST['password'])), 0, 64);
+            if(!empty($_POST)){
+                $response = 'okay';
+            }
+            echo $response;
         }
 
         public function createToken(){

@@ -69,7 +69,7 @@ Notes: No questions or comments at this time
     padding-bottom: 20px;
 }
 
-#forgotpass-msg, resetpass-msg {
+#forgotpass-msg, #resetpass-msg {
 
     width: 80%;
     text-align: center;

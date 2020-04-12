@@ -18,6 +18,7 @@ Notes: No questions or comments at this time
         <script src="<?php echo base_url(); ?>assets/js/register.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/contact.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/forgotpass.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/resetpass.js"></script>
 
     </body>
 </html>
