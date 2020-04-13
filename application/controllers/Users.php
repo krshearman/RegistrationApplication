@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('Forbidden');
 class Users extends CI_Controller{
 
     public function index($page = 'userhome'){
-        if ( file_exists(APPPATH.'views/users/'.$page.'.php'))
+        if ( file_exists(APPPATH.'views/users/'.$page.'.php') && $page !== 'resetpass')
         {
             $data['title'] = ucfirst($page); // Capitalize the first letter
 
@@ -14,8 +14,7 @@ class Users extends CI_Controller{
             $this->load->view('templates/footer');
 
         } else {
-            // Whoops, we don't have a page for that!
-            /* show_404();*/
+
             $data['title'] = ucfirst($page); // Capitalize the first letter
 
             $this->load->view('templates/header', $data);
@@ -24,9 +23,21 @@ class Users extends CI_Controller{
         }
     }
 
+    public function resetpass($token){
+
+
+         $data['title'] = 'Reset Password';
+         $this->load->view('templates/header', $data);
+         $this->load->view('users/resetpass');
+         $this->load->view('templates/footer');
+
+    }
+
+
+
 
     //TODO: Re-write this function using custom script instead of the form_validation library
-    public function signin(){
+  /*   public function signin(){
         $data['title'] = 'Sign In';
 
         $this->form_validation->set_rules('username', 'Username', 'required');
@@ -67,11 +78,7 @@ class Users extends CI_Controller{
                 redirect('users/register');
             }
         }
-    }
-
-    public function validateForm(){
-        return false;
+    } */
 
 
-    }
 }

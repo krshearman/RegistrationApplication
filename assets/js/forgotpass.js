@@ -42,7 +42,7 @@ $(document).ready(function () {
                     $('#forgotpass-msg').css("border-radius", "20px");
                     $('#forgotpass-msg').html("An email has been sent to the address on file.");
                 } else {
-                    //console.log(val);
+                    console.log(val);
                     $('#forgotpass-msg').waypoint(function (direction) {
                         $('#forgotpass-msg').addClass('animated bounceInLeft');
 
@@ -57,6 +57,7 @@ $(document).ready(function () {
                 }
             },
             error: function (val) {
+                console.log(val);
                 $('#forgotpass-msg').waypoint(function (direction) {
                     $('#forgotpass-msg').addClass('animated bounceInDown');
 

@@ -52,4 +52,13 @@
                 return false;
             }
         }
+
+        public function encrypted_code($email) {
+             $cost = 10;
+             //random_bytes requires PHP 7.x and higher
+             $salt = strtr(base64_encode(random_bytes(16)), '+', '.');
+             $salt = sprintf("$2a$%02d$", $cost) . $salt;
+             $code = substr(crypt(strtolower($email), $salt), 7) . uniqid();
+             return preg_replace("/[^A-Za-z0-9 ]/", '', $code);
+             }
     }

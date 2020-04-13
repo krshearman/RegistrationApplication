@@ -101,24 +101,32 @@ class Ajax extends CI_Controller{
              $response = 'error';
              $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ? $_POST['email'] : "";
              if ($email !== ""){
-                $response = 'okay';
+                $this->load->model('user_model');
+                if(!($this->user_model->check_email_exists($email))){
+                     $enc_code = $this->user_model->encrypted_code($email);
+                     //insert values into the table (pwdreset)
+                     $url = "http://intwebdev.local/users/resetpass/".$enc_code;
+                     mail($email, $subject = 'The link you requested!', $message = $url);
+                     //$response = $enc_code;
+                     $response = 'okay';
+                } else {
+                    //Because email doesn't exist in database, we do nothing.
+                    $response = 'okay';
+                }
+
              }
              echo $response;
+
+             //enter timestamped token with an expiry time in pwdreset table
+             //make link with token
+             //send link to user via email
         }
 
-        public function resetPass(){
-            $response = 'error';
-            $password = substr(strip_tags(trim($_POST['password'])), 0, 64);
-            if(!empty($_POST)){
-                $response = 'okay';
-            }
-            echo $response;
-        }
 
-        public function createToken(){
-            //Alex sent you this - look in Google Hangouts conversation
 
-        }
+
+
+
 
 
 }
