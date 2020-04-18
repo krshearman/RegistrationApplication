@@ -61,4 +61,19 @@
              $code = substr(crypt(strtolower($email), $salt), 7) . uniqid();
              return preg_replace("/[^A-Za-z0-9 ]/", '', $code);
              }
+
+        public function log_pwdreset($email, $enc_code, $expiry_time){
+           $query = $this->db->get_where('users', array('email' => $email));
+           $id = $query->row(0)->id;
+
+           $data = array(
+                'id' => $id,
+                'email' => $email,
+                'token' => $enc_code,
+                'expiry_time' => $expiry_time
+            );
+
+            $this->db->insert('pwdreset', $data);
+
+        }
     }

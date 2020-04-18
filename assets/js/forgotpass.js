@@ -42,6 +42,7 @@ $(document).ready(function () {
                     $('#forgotpass-msg').css("border-radius", "20px");
                     $('#forgotpass-msg').html("An email has been sent to the address on file.");
                 } else {
+                    clearForgotPassForm();
                     console.log(val);
                     $('#forgotpass-msg').waypoint(function (direction) {
                         $('#forgotpass-msg').addClass('animated bounceInLeft');
@@ -53,11 +54,11 @@ $(document).ready(function () {
                     $('#forgotpass-msg').css("border", "2px solid darkorchid");
                     $('#forgotpass-msg').css("background-color", "#e2ffff");
                     $('#forgotpass-msg').css("border-radius", "20px");
-                    $('#forgotpass-msg').html("That didn't work with our script");
+                    $('#forgotpass-msg').html("Email sent to the email address on file.");
                 }
             },
-            error: function (val) {
-                console.log(val);
+            error: function () {
+                //console.log(val);
                 $('#forgotpass-msg').waypoint(function (direction) {
                     $('#forgotpass-msg').addClass('animated bounceInDown');
 
