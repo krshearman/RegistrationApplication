@@ -104,13 +104,13 @@ class Ajax extends CI_Controller{
                 $this->load->model('user_model');
                 if(!($this->user_model->check_email_exists($email))){
                      $enc_code = $this->user_model->encrypted_code($email);
-                     $expiry_time = time() + 1800;
+                     $expiry_time = time() + 900;
                      //insert values into the table (pwdreset)
                      $this->user_model->log_pwdreset($email, $enc_code, $expiry_time);
                      $url = "http://intwebdev.local/users/resetpass/".$enc_code;
                      mail($email, $subject = 'The link you requested!', $message = $url);
-                     //$response = $enc_code;
-                     $response = 'okay';
+                     $response = $url;
+                     //$response = 'okay';
                 } else if ($this->user_model->check_email_exists($email)) {
                     $response = 'noreg';
                     $this->user_model->log_pwdreset($email, "not registered", 0);

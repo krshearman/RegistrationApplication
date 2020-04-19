@@ -24,13 +24,18 @@ class Users extends CI_Controller{
     }
 
     public function resetpass($token){
-
-
-         $data['title'] = 'Reset Password';
-         $this->load->view('templates/header', $data);
-         $this->load->view('users/resetpass');
-         $this->load->view('templates/footer');
-
+        $this->load->model('user_model');
+        if($this->user_model->check_expiry($token)){
+            $data['title'] = 'Reset Password';
+            $this->load->view('templates/header', $data);
+            $this->load->view('users/resetpass');
+            $this->load->view('templates/footer');
+        } else if (!($this->user_model->check_expiry($token))){
+             $data['title'] = 'Link Expired';
+             $this->load->view('templates/header', $data);
+             $this->load->view('users/linkexpired');
+             $this->load->view('templates/footer');
+        }
     }
 
 

@@ -64,16 +64,35 @@
 
         public function log_pwdreset($email, $enc_code, $expiry_time){
            $query = $this->db->get_where('users', array('email' => $email));
-           $id = $query->row(0)->id;
+           if(empty($query->row_array())){
+                 $data = array(
+                    //'id' => null,
+                    'email' => $email,
+                    'token' => $enc_code,
+                    'expiry_time' => $expiry_time
+                 );
 
-           $data = array(
+           } else{
+                $id = $query->row(0)->id;
+
+                $data = array(
                 'id' => $id,
                 'email' => $email,
                 'token' => $enc_code,
                 'expiry_time' => $expiry_time
-            );
+                 );
+            }
+           $this->db->insert('pwdreset', $data);
+        }
 
-            $this->db->insert('pwdreset', $data);
-
+        public function check_expiry($token){
+            $query = $this->db->get_where('pwdreset', array('token' => $token));
+            $expiry_time = $query->row(0)->expiry_time;
+            $now = time();
+            if($expiry_time > $now){
+                return true;
+            } else {
+                return false;
+            }
         }
     }

@@ -1,6 +1,6 @@
 <!------------------------------------------------------------
 Name: Kendall Shearman
-Assignment: Coding Seven
+Assignment:
 Purpose: MVC Frameworks
 Notes: No questions or comments at this time
 --------------------------------------------------------------->

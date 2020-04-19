@@ -27,7 +27,7 @@ $(document).ready(function () {
             type: 'POST',
             data: {email: email},
             success: function (val) {
-                if (val === 'okay') {
+                if (val) {
                     clearForgotPassForm();
                     console.log(val);
                     $('#forgotpass-msg').waypoint(function (direction) {
