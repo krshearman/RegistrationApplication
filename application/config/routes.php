@@ -51,10 +51,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 
-$route['users/resetpass'] = 'users/resetpass';
+//$route['resetpass'] = 'ajax/resetpass';
 $route['send'] = 'ajax/send';
 $route['forgotpass'] = 'ajax/forgotpass';
-$route['ajax/(:any)'] = 'ajax/$1';
+$route['users/resetpass'] = 'ajax/resetpass';
+//$route['ajax/(:any)'] = 'ajax/$1';
 $route['users'] = 'users';
 $route['users/(:any)'] = 'users/index/$1';
 $route['users/signin'] = 'users/signin';

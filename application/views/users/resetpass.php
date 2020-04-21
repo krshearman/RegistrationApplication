@@ -16,9 +16,15 @@
                                 </div>
                                 <h3 class="login-heading mb-4">Reset your password</h3>
                                 <form id="resetpass-form" method="" action="">
+                                <div class="form-label-group">
+                                     <input type="text" id="resetemail" name="resetemail" class="form-control" placeholder="Email">
+                                     <label for="resetemail">Email</label>
+                                           <br>
+                                           </div>
+
                                     <div class="form-label-group">
-                                            <input type="password" id="password" name="password" class="form-control" placeholder="Password">
-                                            <label for="password">Password</label>
+                                            <input type="password" id="password" name="password" class="form-control" placeholder="New Password">
+                                            <label for="password">New Password</label>
                                             <div class="checks">
                                                 <p class="small">At least 8 characters | 1 upper | 1 lower | 1 symbol | 1 number</p>
                                             </div>

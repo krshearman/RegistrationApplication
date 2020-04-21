@@ -95,4 +95,10 @@
                 return false;
             }
         }
+
+        public function changePass($email, $enc_password){
+            $this->db->where('email', $email);
+            $this->db->update('users', array('password' => $enc_password));
+            return true;
+           }
     }

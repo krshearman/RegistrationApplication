@@ -1,6 +1,7 @@
 "use strict";
 
 function clearResetForm() {
+    $('#resetemail').val('');
     $('#password').val('');
     $('#passwordconf').val('');
     $('#resetpass-msg').html('<br>');
@@ -18,11 +19,18 @@ $(document).ready(function () {
         console.log("clicked");
         var errorMessage = "";
 
+        var resetemail = $('#resetemail').val().trim();
         var password = $('#password').val().trim();
         var passwordconf = $('#passwordconf').val().trim();
 
+        $('#resetemail').val(resetemail);
         $('#password').val(password);
         $('#passwordconf').val(passwordconf);
+
+        if (!(validEmail(resetemail))) {
+            errorMessage += "Please enter a valid email address.<br>";
+            console.log(errorMessage)
+        }
 
         if (password === "" || !(validPassword(password))) {
             errorMessage += "Password must be at least 8 characters and contain 1 upper, 1 lower, 1 symbol, 1 number.<br>"
@@ -36,11 +44,12 @@ $(document).ready(function () {
 
         if(errorMessage.length === 0){
             $.ajax({
-                url: '../Ajax/resetPass',
+                url: '/Ajax/resetPass',
                 type: 'POST',
-                data:{password: password},
+                data:{resetemail: resetemail, password: password},
                     success: function (val) {
                         if (val === 'okay') {
+                            console.log(val);
                             clearResetForm();
                             $('#resetpass-msg').waypoint(function (direction) {
                                 $('#resetpass-msg').addClass('animated bounceInDown');
@@ -107,4 +116,10 @@ function validPassword(password) {
         return true;
 
     }
+}
+
+function validEmail(email) {
+    var re =
+        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
 }
