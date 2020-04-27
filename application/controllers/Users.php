@@ -2,26 +2,7 @@
 defined('BASEPATH') OR exit('Forbidden');
 
 
-class Users extends CI_Controller{
-
-    public function index($page = 'userhome'){
-        if ( file_exists(APPPATH.'views/users/'.$page.'.php') && $page !== 'resetpass')
-        {
-            $data['title'] = ucfirst($page); // Capitalize the first letter
-
-            $this->load->view('templates/header', $data);
-            $this->load->view('users/'.$page);
-            $this->load->view('templates/footer');
-
-        } else {
-
-            $data['title'] = ucfirst($page); // Capitalize the first letter
-
-            $this->load->view('templates/header', $data);
-            $this->load->view('users/custom404');
-            $this->load->view('templates/footer');
-        }
-    }
+class Users extends MY_Controller {
 
     public function resetpass($token){
         $this->load->model('user_model');

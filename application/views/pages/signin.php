@@ -10,7 +10,7 @@
                             <div class="col-md-9 col-lg-8 mx-auto">
                                 <?php echo validation_errors(); ?>
 
-                                <?php echo form_open('users/signin'); ?>
+
                                 <h3 class="login-heading mb-4">Sign in here!</h3>
                                 <form>
                                     <div class="form-label-group">
@@ -29,12 +29,12 @@
                                     </div>
                                     <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2 my-button" type="submit">Sign in</button>
                                     <div class="text-center signinlinks">
-                                        <a class="small" href="<?php echo base_url(); ?>users/forgotpass">Forgot password?</a>
+                                        <a class="small" href="<?php echo base_url(); ?>forgotpass">Forgot password?</a>
                                     </div>
                                     <div class="text-center signinlinks">
-                                        <a class="small" href="<?php echo base_url(); ?>users/register">New User? Register Now!</a>
+                                        <a class="small" href="<?php echo base_url(); ?>register">New User? Register Now!</a>
                                     </div>
-                                    <?php echo form_close(); ?>
+                                    </form>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('Forbidden');
 
-class Ajax extends CI_Controller{
+class Ajax extends MY_Controller {
 
     public function send(){
         $response = "error";
@@ -120,7 +120,7 @@ class Ajax extends CI_Controller{
 
         }
 
-        public function resetPass(){
+        /*public function resetPass(){
             $response = 'error';
             if(!empty($_POST)){
                  $email = filter_var($_POST['resetemail'], FILTER_VALIDATE_EMAIL) ? $_POST['resetemail'] : "";
@@ -138,7 +138,7 @@ class Ajax extends CI_Controller{
 
             }
            echo $response;
-        }
+        }*/
 
 }
 

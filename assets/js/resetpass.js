@@ -44,7 +44,7 @@ $(document).ready(function () {
 
         if(errorMessage.length === 0){
             $.ajax({
-                url: '/Ajax/resetPass',
+                url: '/Secure_Ajax/resetPass',
                 type: 'POST',
                 data:{resetemail: resetemail, password: password},
                     success: function (val) {

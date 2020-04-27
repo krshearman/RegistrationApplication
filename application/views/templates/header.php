@@ -71,9 +71,9 @@ Notes: No questions or comments at this time
                             MEMBERS
                         </a>
                         <div class="dropdown-menu dd-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?php echo base_url(); ?>users/">MEMBER HOME</a>
-                            <a class="dropdown-item" href="<?php echo base_url(); ?>users/register">REGISTER</a>
-                            <a class="dropdown-item" href="<?php echo base_url(); ?>users/signin">LOG IN</a>
+                            <a class="dropdown-item" href="<?php echo base_url(); ?>userhome">MEMBER HOME</a>
+                            <a class="dropdown-item" href="<?php echo base_url(); ?>register">REGISTER</a>
+                            <a class="dropdown-item" href="<?php echo base_url(); ?>signin">LOG IN</a>
                             <div class="dropdown-divider hidden"></div>
                             <a class="dropdown-item hidden" href="#">MEMBER'S AREA</a>
                         </div>
