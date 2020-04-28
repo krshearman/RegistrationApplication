@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('Forbidden');
 
 
-class Users extends MY_Controller {
+class Users extends MY_Secure_Controller {
 
     public function resetpass($token){
         $this->load->model('user_model');

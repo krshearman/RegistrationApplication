@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('Forbidden');
 
-class Ajax extends MY_Controller {
+class Ajax extends MY_Ajax_Controller {
 
     public function send(){
         $response = "error";
