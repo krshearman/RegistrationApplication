@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('Forbidden');
 
 
-class Users extends MY_Secure_Controller {
+class Users extends MY_Controller {
 
     public function resetpass($token){
         $this->load->model('user_model');
@@ -17,6 +17,23 @@ class Users extends MY_Secure_Controller {
              $this->load->view('users/linkexpired');
              $this->load->view('templates/footer');
         }
+    }
+
+    public function usersession($token){
+        if($token){
+            $data['title'] = 'User Session';
+            $this->load->view('templates/header', $data);
+            $this->load->view('users/usersession');
+            $this->load->view('templates/footer');
+        } else {
+            $data['title'] = 'Session Expired';
+            $this->load->view('templates/header', $data);
+            //change this to tell user that session has expired and to login again
+            $this->load->view('users/linkexpired');
+            $this->load->view('templates/footer');
+
+        }
+
     }
 
 

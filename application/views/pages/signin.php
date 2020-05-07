@@ -8,26 +8,29 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-9 col-lg-8 mx-auto">
-                                <?php echo validation_errors(); ?>
+                                <div id="signin-msg">
+                                    <!-- This is a blank area for us to talk to the user -->
+                                    <br>
+                                </div>
 
 
                                 <h3 class="login-heading mb-4">Sign in here!</h3>
-                                <form>
+                                <form id="sign-in" action="" method="">
                                     <div class="form-label-group">
-                                        <input type="text" id="username" name="username" class="form-control" placeholder="Username" autofocus>
-                                        <label for="username">Username</label>
+                                        <input type="text" id="user" name="user" class="form-control" placeholder="Username">
+                                        <label for="user">Username</label>
                                     </div>
 
                                     <div class="form-label-group">
-                                        <input type="password" id="password" name="password" class="form-control" placeholder="Password">
-                                        <label for="password">Password</label>
+                                        <input type="password" id="pass" name="pass" class="form-control" placeholder="Password">
+                                        <label for="pass">Password</label>
                                     </div>
 
                                     <div class="custom-control custom-checkbox mb-3">
                                         <input type="checkbox" class="custom-control-input" id="customCheck1">
                                         <label class="custom-control-label" for="customCheck1">Remember password</label>
                                     </div>
-                                    <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2 my-button" type="submit">Sign in</button>
+                                    <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2 my-button" type="button" id="signin-submit">Sign in</button>
                                     <div class="text-center signinlinks">
                                         <a class="small" href="<?php echo base_url(); ?>forgotpass">Forgot password?</a>
                                     </div>

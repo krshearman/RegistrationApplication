@@ -69,7 +69,7 @@ Notes: No questions or comments at this time
     padding-bottom: 20px;
 }
 
-#forgotpass-msg, #resetpass-msg {
+#forgotpass-msg, #resetpass-msg, #signin-msg {
 
     width: 80%;
     text-align: center;
@@ -111,6 +111,9 @@ Notes: No questions or comments at this time
     padding-bottom: 75px;
 }
 
+.usersession{
+    height: 700px;
+}
 .user-button a:hover{
     text-decoration: transparent;
 }

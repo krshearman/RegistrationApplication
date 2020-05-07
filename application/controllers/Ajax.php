@@ -1,7 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('Forbidden');
 
-class Ajax extends MY_Ajax_Controller {
+class Ajax extends MY_Controller {
+
+    /*public function __construct() {
+        //construct will kick and redirect if not logged in or if banned
+        parent::__construct();
+
+        //these will load only if parent didn't redirect
+        $this->load->model('user_model');
+    }*/
 
     public function send(){
         $response = "error";
@@ -139,6 +147,10 @@ class Ajax extends MY_Ajax_Controller {
             }
            echo $response;
         }*/
+
+    public function signin(){
+
+    }
 
 }
 

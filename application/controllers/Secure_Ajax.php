@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('Forbidden');
 
-class Secure_Ajax extends MY_Secure_Ajax_Controller {
+class Secure_Ajax extends MY_Controller {
     public function resetPass(){
         $response = 'error';
         if(!empty($_POST)){
@@ -21,5 +21,10 @@ class Secure_Ajax extends MY_Secure_Ajax_Controller {
         }
         echo $response;
     }
+
+    public function createUserSession(){
+
+    }
+
 
 }
