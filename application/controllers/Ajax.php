@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('Forbidden');
 
-class Ajax extends MY_Controller {
+class Ajax extends MY_Controller
+{
 
     /*public function __construct() {
         //construct will kick and redirect if not logged in or if banned
@@ -11,7 +12,8 @@ class Ajax extends MY_Controller {
         $this->load->model('user_model');
     }*/
 
-    public function send(){
+    public function send()
+    {
         $response = "error";
 
 
@@ -56,7 +58,8 @@ class Ajax extends MY_Controller {
         echo $response;
     }
 
-    public function register(){
+    public function register()
+    {
         $response = 'error';
         if (!empty($_POST)) {
 
@@ -78,79 +81,116 @@ class Ajax extends MY_Controller {
                     $response = 'okay';
                 }
             }
-        } echo $response;
+        }
+        echo $response;
     }
 
-    public function checkUsername(){
+    public function checkUsername()
+    {
         $response = 'error';
-        if(!empty($_POST)){
+        if (!empty($_POST)) {
             $this->load->model('user_model');
             $username = substr(strip_tags(trim($_POST['username'])), 0, 64);
-            if($this->user_model->check_username_exists($username)){
+            if ($this->user_model->check_username_exists($username)) {
                 $response = 'okay';
             }
         }
         echo $response;
     }
 
-      public function checkEmailUnique(){
+    public function checkEmailUnique()
+    {
         $response = 'error';
         $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ? $_POST['email'] : "";
-        if($email !== ""){
-                $this->load->model('user_model');
-                if($this->user_model->check_email_exists($email)){
-                    $response = 'okay';
-                }
+        if ($email !== "") {
+            $this->load->model('user_model');
+            if ($this->user_model->check_email_exists($email)) {
+                $response = 'okay';
             }
-            echo $response;
         }
+        echo $response;
+    }
 
-        public function sendResetLink(){
-             $response = 'error';
-             $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ? $_POST['email'] : "";
-             if ($email !== ""){
-                $this->load->model('user_model');
-                if(!($this->user_model->check_email_exists($email))){
-                     $enc_code = $this->user_model->encrypted_code($email);
-                     $expiry_time = time() + 900;
-                     //insert values into the table (pwdreset)
-                     $this->user_model->log_pwdreset($email, $enc_code, $expiry_time);
-                     $url = "http://intwebdev.local/users/resetpass/".$enc_code;
-                     mail($email, $subject = 'The link you requested!', $message = $url);
-                     $response = $url;
-                     //$response = 'okay';
-                } else if ($this->user_model->check_email_exists($email)) {
-                    $response = 'noreg';
-                    $this->user_model->log_pwdreset($email, "not registered", 0);
-                }
-               }
-             echo $response;
-
-        }
-
-        /*public function resetPass(){
-            $response = 'error';
-            if(!empty($_POST)){
-                 $email = filter_var($_POST['resetemail'], FILTER_VALIDATE_EMAIL) ? $_POST['resetemail'] : "";
-                 $password = substr(strip_tags(trim($_POST['password'])), 0, 64);
-                 //$response = 'okay';
-                 if($email !== "" && $password !== ""){
-                    $this->load->model('user_model');
-                    $enc_password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
-                    if(($this->user_model->changePass($email, $enc_password))){
-                        $response = 'okay';
-                    }
-
-
-                 }
-
+    public function sendResetLink()
+    {
+        $response = 'error';
+        $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ? $_POST['email'] : "";
+        if ($email !== "") {
+            $this->load->model('user_model');
+            if (!($this->user_model->check_email_exists($email))) {
+                $enc_code = $this->user_model->encrypted_code($email);
+                $expiry_time = time() + 900;
+                //insert values into the table (pwdreset)
+                $this->user_model->log_pwdreset($email, $enc_code, $expiry_time);
+                $url = "http://intwebdev.local/users/resetpass/" . $enc_code;
+                mail($email, $subject = 'The link you requested!', $message = $url);
+                $response = $url;
+                //$response = 'okay';
+            } else if ($this->user_model->check_email_exists($email)) {
+                $response = 'noreg';
+                $this->user_model->log_pwdreset($email, "not registered", 0);
             }
-           echo $response;
-        }*/
-
-    public function signin(){
+        }
+        echo $response;
 
     }
 
-}
+    /*public function resetPass(){
+        $response = 'error';
+        if(!empty($_POST)){
+             $email = filter_var($_POST['resetemail'], FILTER_VALIDATE_EMAIL) ? $_POST['resetemail'] : "";
+             $password = substr(strip_tags(trim($_POST['password'])), 0, 64);
+             //$response = 'okay';
+             if($email !== "" && $password !== ""){
+                $this->load->model('user_model');
+                $enc_password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+                if(($this->user_model->changePass($email, $enc_password))){
+                    $response = 'okay';
+                }
 
+
+             }
+
+        }
+       echo $response;
+    }*/
+
+    public function signin(){
+        //take username and password, login with model
+        //if an id is returned (!== false)
+       /* $response = "error";
+        if (!empty($_POST)) {
+            $this->load->model('user_model');
+            $username = substr(strip_tags(trim($_POST['user'])), 0, 64);
+            $password = substr(strip_tags(trim($_POST['pass'])), 0, 64);
+            }
+            if (!empty($username) && !empty($password)){
+                $user_id = $this->user_model->login($username, $password);
+                if ($user_id) {
+                    // Create session
+                    $user_data = array(
+                        'user_id' => $user_id,
+                        'username' => $username,
+                        'logged_in' => true
+                    );
+                    $this->session->set_userdata($user_data);
+                    //redirect('users/usersession/token', 'refresh');
+                    $response = "okay";
+            }
+        }*/
+        $response = "error";
+        if(!empty($_POST)){
+            $this->load->model('user_model');
+            $username = substr(strip_tags(trim($_POST['user'])), 0, 64);
+            $password = substr(strip_tags(trim($_POST['pass'])), 0, 64);
+
+            } if (!empty($username) && !empty($password)){
+                $user_id = $this->user_model->signin($username, $password);
+                $response = "okay";
+                }
+
+
+        echo $response;
+
+    }
+}

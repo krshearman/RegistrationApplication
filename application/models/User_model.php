@@ -27,7 +27,7 @@
 
             if (!empty($result) && password_verify('password', $password)) {
                 // if this username exists, and the input password is verified using password_verify
-                return $result;
+                return $result->row(0)->id;
             } else {
                 return false;
             }
@@ -101,4 +101,23 @@
             $this->db->update('users', array('password' => $enc_password));
             return true;
            }
+
+        public function login($username, $password){
+            // Validate
+            $this->db->where('username', $username);
+            $this->db->where('password', $password);
+
+            $result = $this->db->get('users');
+
+            if($result->num_rows() == 1){
+                return $result->row(0)->id;
+            } else {
+                return false;
+            }
+
+        }
+
+        public function userSessionInfo(){
+
+        }
     }

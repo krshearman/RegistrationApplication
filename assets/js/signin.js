@@ -36,8 +36,21 @@ $(document).ready(function () {
 
         if (errorMessage.length === 0) {
             $('#signin-msg').html("Signing in...");
+
+            $.ajax({
+                    url: '../Ajax/signin',
+                    type: 'POST',
+                    data: {user: user, pass: pass},
+                    success: function (val) {
+                        if (val) {
+                            clearSigninForm();
+                            console.log(val);
+                        }
+                    }
+                }
+            )
             //Ajax here
-            clearSigninForm();
+            //clearSigninForm();
 
         } else {
             $('#signin-msg').waypoint(function (direction) {
