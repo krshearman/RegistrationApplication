@@ -156,41 +156,22 @@ class Ajax extends MY_Controller
     }*/
 
     public function signin(){
-        //take username and password, login with model
-        //if an id is returned (!== false)
-       /* $response = "error";
+
+        $response = "error";
         if (!empty($_POST)) {
             $this->load->model('user_model');
             $username = substr(strip_tags(trim($_POST['user'])), 0, 64);
-            $password = substr(strip_tags(trim($_POST['pass'])), 0, 64);
+            //$password = substr(strip_tags(trim($_POST['pass'])), 0, 64);
+            $password = $_POST['pass'];
             }
             if (!empty($username) && !empty($password)){
-                $user_id = $this->user_model->login($username, $password);
-                if ($user_id) {
-                    // Create session
-                    $user_data = array(
-                        'user_id' => $user_id,
-                        'username' => $username,
-                        'logged_in' => true
-                    );
-                    $this->session->set_userdata($user_data);
-                    //redirect('users/usersession/token', 'refresh');
-                    $response = "okay";
-            }
-        }*/
-        $response = "error";
-        if(!empty($_POST)){
-            $this->load->model('user_model');
-            $username = substr(strip_tags(trim($_POST['user'])), 0, 64);
-            $password = substr(strip_tags(trim($_POST['pass'])), 0, 64);
-
-            } if (!empty($username) && !empty($password)){
-                $user_id = $this->user_model->signin($username, $password);
-                $response = "okay";
+                $enc_code = $this->user_model->signin($username, $password);
+                if ($enc_code) {
+                    $url = "http://intwebdev.local/users/usersession/" . $enc_code;
+                    $response = $url;
+                    }
                 }
-
-
-        echo $response;
+            echo $response;
 
     }
 }

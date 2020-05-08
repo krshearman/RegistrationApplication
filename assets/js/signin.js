@@ -1,9 +1,4 @@
-/* TODO:
-* Validate username and password (not blank)
-*
-* jQuery AJAX request to send user sign in data
-*
-* */
+
 
 "use strict";
 
@@ -42,16 +37,19 @@ $(document).ready(function () {
                     type: 'POST',
                     data: {user: user, pass: pass},
                     success: function (val) {
-                        if (val) {
+                        if (val != 'error') {
                             clearSigninForm();
+                            console.log(val);
+                            $(location).attr('href', val);
+                        }
+                    },
+                    error: function (val){
+                        if (val){
                             console.log(val);
                         }
                     }
                 }
             )
-            //Ajax here
-            //clearSigninForm();
-
         } else {
             $('#signin-msg').waypoint(function (direction) {
                 $('#signin-msg').addClass('animated bounceInLeft');

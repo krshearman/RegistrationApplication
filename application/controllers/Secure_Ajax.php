@@ -14,17 +14,8 @@ class Secure_Ajax extends MY_Controller {
                 if(($this->user_model->changePass($email, $enc_password))){
                     $response = 'okay';
                 }
-
-
             }
-
         }
         echo $response;
     }
-
-    public function createUserSession(){
-
-    }
-
-
 }

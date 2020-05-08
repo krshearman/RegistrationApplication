@@ -20,14 +20,23 @@
 
         public function signin($username, $password){
             // Validate
-            $this->db->where('username', $username);
-            $this->db->where('password', $password);
+            $query = $this->db->get_where('users', array('username' => $username));
+            $ver_password = password_verify($password, $query->row(0)->password);
 
-            $result = $this->db->get('users');
-
-            if (!empty($result) && password_verify('password', $password)) {
+            if (!empty($query) && $ver_password == true) {
                 // if this username exists, and the input password is verified using password_verify
-                return $result->row(0)->id;
+                //Create usersession in usersession database (session id (pk), id (foreign key users,
+                //username, email, token made from email, time (unix))
+                $enc_code = $this->encrypted_code($query->row(0)->email);
+                $data = array(
+                    'id' => $query->row(0)->id,
+                    'username' => $query->row(0)->username,
+                    'email' => $query->row(0)->email,
+                    'token' => $enc_code,
+                    'login_time' => time()
+                );
+                $this->db->insert('usersessions', $data);
+                return $enc_code;
             } else {
                 return false;
             }
@@ -102,20 +111,7 @@
             return true;
            }
 
-        public function login($username, $password){
-            // Validate
-            $this->db->where('username', $username);
-            $this->db->where('password', $password);
 
-            $result = $this->db->get('users');
-
-            if($result->num_rows() == 1){
-                return $result->row(0)->id;
-            } else {
-                return false;
-            }
-
-        }
 
         public function userSessionInfo(){
 
