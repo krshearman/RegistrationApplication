@@ -163,11 +163,36 @@ class Ajax extends MY_Controller
             $username = substr(strip_tags(trim($_POST['user'])), 0, 64);
             //$password = substr(strip_tags(trim($_POST['pass'])), 0, 64);
             $password = $_POST['pass'];
+
             }
             if (!empty($username) && !empty($password)){
-                $enc_code = $this->user_model->signin($username, $password);
-                if ($enc_code) {
-                    $url = "http://intwebdev.local/users/usersession/" . $enc_code;
+
+                $user_id = $this->user_model->signin($username, $password);
+                if ($user_id) {
+                    //session_start();
+                    $cookie = array(
+                        'name' => 'UserCookie',
+                        'value' => true,
+                        'expire' => 300,
+                        'domain' => '.intwebdev.local',
+                        'path' => '/',
+
+                    );
+
+                    $this->input->set_cookie($cookie);
+
+                    $user_data = array(
+                        'user_id' => $user_id,
+                        'username' => $username,
+                        'logged_in' => true,
+                        'created' => time()
+                    );
+
+
+                    //setcookie("TestCookie", true, time() + (60 * 20), 'intwebdev.local', '/');
+
+                    $this->session->set_userdata($user_data);
+                    $url = base_url().'users/usersession/';
                     $response = $url;
                     }
                 }

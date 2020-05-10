@@ -19,8 +19,8 @@ class Users extends MY_Controller {
         }
     }
 
-    public function usersession($token){
-        if($token){
+    public function usersession(){
+        if((isset($_SESSION['created']) && isset($_COOKIE['UserCookie'])) /*&& ((isset($_COOKIE['TestCookie']) && $_COOKIE['TestCookie'] == true))*/){
             $data['title'] = 'User Session';
             $this->load->view('templates/header', $data);
             $this->load->view('users/usersession');
@@ -34,6 +34,20 @@ class Users extends MY_Controller {
 
         }
 
+    }
+
+    public function logout(){
+        // Unset user data
+        $this->session->unset_userdata('logged_in');
+        $this->session->unset_userdata('user_id');
+        $this->session->unset_userdata('username');
+        $this->session->unset_userdata('created');
+
+
+        // Set message
+        //$this->session->set_flashdata('user_loggedout', 'You are now logged out');
+
+        redirect('users');
     }
 
 

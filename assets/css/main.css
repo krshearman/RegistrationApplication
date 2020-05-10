@@ -40,6 +40,11 @@ Notes: No questions or comments at this time
     background-color: darkorchid;
 }
 
+.userheading{
+    float: left;
+    margin-top: 60px;
+}
+
 /* Registration form */
 
 .checks {
@@ -116,6 +121,12 @@ Notes: No questions or comments at this time
 }
 .user-button a:hover{
     text-decoration: transparent;
+}
+
+.userbutton{
+
+    margin-top: 30px;
+    float: right;
 }
 
 .my-button {

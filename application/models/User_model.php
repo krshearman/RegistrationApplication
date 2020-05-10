@@ -28,6 +28,8 @@
                 //Create usersession in usersession database (session id (pk), id (foreign key users,
                 //username, email, token made from email, time (unix))
                 $enc_code = $this->encrypted_code($query->row(0)->email);
+                //setcookie("TestCookie", true, time() + (60 * 20), 'intwebdev.local', '/');
+                //set_cookie("TestCookie", true, time() + (60 * 20), 'intwebdev.local', '/');
                 $data = array(
                     'id' => $query->row(0)->id,
                     'username' => $query->row(0)->username,
@@ -36,7 +38,7 @@
                     'login_time' => time()
                 );
                 $this->db->insert('usersessions', $data);
-                return $enc_code;
+                return $query->row(0)->id;
             } else {
                 return false;
             }
