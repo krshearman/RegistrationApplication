@@ -122,7 +122,7 @@ class Ajax extends MY_Controller
                 $expiry_time = time() + 900;
                 //insert values into the table (pwdreset)
                 $this->user_model->log_pwdreset($email, $enc_code, $expiry_time);
-                $url = "http://intwebdev.local/users/resetpass/" . $enc_code;
+                $url = base_url().'users/resetpass/' . $enc_code;
                 mail($email, $subject = 'The link you requested!', $message = $url);
                 $response = $url;
                 //$response = 'okay';
@@ -134,27 +134,6 @@ class Ajax extends MY_Controller
         echo $response;
 
     }
-
-    /*public function resetPass(){
-        $response = 'error';
-        if(!empty($_POST)){
-             $email = filter_var($_POST['resetemail'], FILTER_VALIDATE_EMAIL) ? $_POST['resetemail'] : "";
-             $password = substr(strip_tags(trim($_POST['password'])), 0, 64);
-             //$response = 'okay';
-             if($email !== "" && $password !== ""){
-                $this->load->model('user_model');
-                $enc_password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
-                if(($this->user_model->changePass($email, $enc_password))){
-                    $response = 'okay';
-                }
-
-
-             }
-
-        }
-       echo $response;
-    }*/
-
     public function signin(){
 
         $response = "error";
