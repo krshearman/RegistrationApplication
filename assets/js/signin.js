@@ -41,11 +41,33 @@ $(document).ready(function () {
                             clearSigninForm();
                             console.log(val);
                             $(location).attr('href', val);
+                        } else if (val == 'error'){
+                            $('#signin-msg').waypoint(function (direction) {
+                                $('#signin-msg').addClass('animated bounceInLeft');
+
+                            }, { offset: '50%'
+
+                            });
+                            $('#signin-msg').css("border", "2px solid darkorchid");
+                            $('#signin-msg').css("background-color", "#e2ffff");
+                            $('#signin-msg').css("border-radius", "20px");
+                            $('#signin-msg').html('We do not recognize those credentials.<br> NOT SIGNED IN!');
+
                         }
                     },
                     error: function (val){
                         if (val){
                             console.log(val);
+                            $('#signin-msg').waypoint(function (direction) {
+                                $('#signin-msg').addClass('animated bounceInLeft');
+
+                            }, { offset: '50%'
+
+                            });
+                            $('#signin-msg').css("border", "2px solid darkorchid");
+                            $('#signin-msg').css("background-color", "#e2ffff");
+                            $('#signin-msg').css("border-radius", "20px");
+                            $('#signin-msg').html('SERVER ERROR - NOT SIGNED IN!');
                         }
                     }
                 }
@@ -64,8 +86,5 @@ $(document).ready(function () {
         }
 
     });
-
-
-
 
 });
