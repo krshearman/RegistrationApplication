@@ -4,8 +4,7 @@
 
 	class User_model extends CI_Model{
 
-
-        public function register($username, $email, $enc_password){
+	    public function register($username, $email, $enc_password){
             // User data array
             $data = array(
                 'username' => $username,
@@ -24,20 +23,30 @@
             $ver_password = password_verify($password, $query->row(0)->password);
 
             if (!empty($query) && $ver_password == true) {
-                // if this username exists, and the input password is verified using password_verify
-                //Create usersession in usersession database (session id (pk), id (foreign key users,
-                //username, email, token made from email, time (unix))
-                $enc_code = $this->encrypted_code($query->row(0)->email);
-                //setcookie("TestCookie", true, time() + (60 * 20), 'intwebdev.local', '/');
-                //set_cookie("TestCookie", true, time() + (60 * 20), 'intwebdev.local', '/');
+
                 $data = array(
                     'id' => $query->row(0)->id,
                     'username' => $query->row(0)->username,
                     'email' => $query->row(0)->email,
-                    'token' => $enc_code,
                     'login_time' => time()
                 );
                 $this->db->insert('usersessions', $data);
+
+                if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+                    $ip = $_SERVER['HTTP_CLIENT_IP'];
+                } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+                    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+                } else {
+                    $ip = $_SERVER['REMOTE_ADDR'];
+                }
+                $loginData = array(
+                    'last_login_time' => time(),
+                    'last_login_ip' => $ip
+                );
+
+                $this->db->where('id',  $query->row(0)->id);
+                $this->db->update('users', $loginData);
+
                 return $query->row(0)->id;
             } else {
                 return false;

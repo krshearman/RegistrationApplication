@@ -152,7 +152,7 @@ class Ajax extends MY_Controller
                     $cookie = array(
                         'name' => 'UserCookie',
                         'value' => true,
-                        'expire' => 300,
+                        'expire' => 2592000,  //expires in one month if user doesn't log out
                         'domain' => '.intwebdev.local',
                         'path' => '/',
 
@@ -167,8 +167,6 @@ class Ajax extends MY_Controller
                         'created' => time()
                     );
 
-
-                    //setcookie("TestCookie", true, time() + (60 * 20), 'intwebdev.local', '/');
 
                     $this->session->set_userdata($user_data);
                     $url = base_url().'users/usersession/';
