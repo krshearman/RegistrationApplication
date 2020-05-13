@@ -152,7 +152,7 @@ class Ajax extends MY_Controller
                     $cookie = array(
                         'name' => 'UserCookie',
                         'value' => true,
-                        'expire' => 2592000,  //expires in one month if user doesn't log out
+                        'expire' => 300,  //expires in one month if user doesn't log out
                         'domain' => '.intwebdev.local',
                         'path' => '/',
 

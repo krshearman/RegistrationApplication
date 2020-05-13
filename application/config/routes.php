@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
+$route['logout'] = 'users/logout';
 $route['send'] = 'ajax/send';
 $route['users'] = 'pages/view/userhome';
 $route['default_controller'] = 'pages/view';
