@@ -40,7 +40,7 @@
                     $ip = $_SERVER['REMOTE_ADDR'];
                 }
                 $loginData = array(
-                    'last_login_time' => time(),
+                    //'last_login_time' => time(),
                     'last_login_ip' => $ip
                 );
 
@@ -122,9 +122,4 @@
             return true;
            }
 
-
-
-        public function userSessionInfo(){
-
-        }
     }
