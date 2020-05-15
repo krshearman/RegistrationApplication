@@ -153,7 +153,7 @@ class Ajax extends MY_Controller
                         'name' => 'UserCookie',
                         'value' => true,
                         'expire' => 300,  //expires in one month if user doesn't log out
-                        'domain' => '.intwebdev.local',
+                        'domain' => '.'.base_url(),
                         'path' => '/',
 
                     );
