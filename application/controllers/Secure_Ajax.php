@@ -2,6 +2,13 @@
 defined('BASEPATH') OR exit('Forbidden');
 
 class Secure_Ajax extends MY_Controller {
+
+    public function __construct() {
+
+        parent::__construct();
+        $this->load->model('user_model');
+    }
+
     public function resetPass(){
         $response = 'error';
         if(!empty($_POST)){

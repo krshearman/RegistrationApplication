@@ -1,6 +1,6 @@
 <!------------------------------------------------------------
 Name: Kendall Shearman
-Assignment: Coding Seven
+Assignment: Final Project
 Purpose: MVC Frameworks
 Notes: No questions or comments at this time
 --------------------------------------------------------------->
@@ -30,22 +30,12 @@ Notes: No questions or comments at this time
         <link rel="icon" href="<?php echo base_url(); ?>favicon-32x32.png">
         <link rel="icon" href="<?php echo base_url(); ?>favicon.ico">
 
-        <!-- Scripts -->
-        <!--<script src="<?php /*echo base_url(); */?>assets/js/jquery-3.4.1.js"></script>
-        <script src="<?php /*echo base_url(); */?>assets/js/popper.min.js"></script>
-        <script src="<?php /*echo base_url(); */?>assets/js/bootstrap.min.js"></script>
-        <script src="<?php /*echo base_url(); */?>assets/js/featherlight.js"></script>
-        <script src="<?php /*echo base_url(); */?>assets/js/jquery.waypoints.min.js"></script>
-        <script src="<?php /*echo base_url(); */?>assets/js/register.js"></script>
-        <script src="<?php /*echo base_url(); */?>assets/js/contact.js"></script>-->
-
-
         <title><?= $title; ?></title>
 
     </head>
     <body>
 
-   <!-- <h1><?/*= $title; */?></h1>-->
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="<?php echo base_url(); ?>home"><i class="ion-ios-home nav-home"></i></a>

@@ -1,6 +1,6 @@
 /*------------------------------------------------------------
 Name: Kendall Shearman
-Assignment: Coding Seven
+Assignment: Final Project
 Purpose: MVC Frameworks
 Notes: No questions or comments at this time
 --------------------------------------------------------------*/
@@ -117,9 +117,11 @@ Notes: No questions or comments at this time
     height: auto;
     padding-bottom: 75px;
 }
-
+.usercard{
+    margin-bottom: 100px;
+}
 .usersession{
-    height: 700px;
+    /*height: 700px;*/
 }
 .user-button a:hover{
     text-decoration: transparent;
@@ -128,7 +130,7 @@ Notes: No questions or comments at this time
 .userbutton{
 
     margin-top: 50px;
-    width: 75%;
+    width: 50%;
     /*float: right;*/
 }
 
@@ -237,9 +239,17 @@ footer a:hover {
     }
 }
 
-@media screen and (min-width: 250px){
-    .usercard{
-        width: 100%;
+
+
+
+@media screen and (max-width: 545px){
+    .userbutton{
+        width: 80%;
     }
 }
 
+@media screen and (max-width: 302px){
+    .userbutton{
+        width: 100%;
+    }
+}

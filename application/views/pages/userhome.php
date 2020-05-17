@@ -1,3 +1,9 @@
+<!------------------------------------------------------------
+Name: Kendall Shearman
+Assignment: Final Project
+Purpose: MVC Frameworks
+Notes: No questions or comments at this time
+--------------------------------------------------------------->
 <div class="container-fluid">
     <div class="row no-gutter">
         <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>

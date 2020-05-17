@@ -1,6 +1,6 @@
 <!------------------------------------------------------------
 Name: Kendall Shearman
-Assignment:
+Assignment: Final Project
 Purpose: MVC Frameworks
 Notes: No questions or comments at this time
 --------------------------------------------------------------->

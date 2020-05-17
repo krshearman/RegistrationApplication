@@ -4,13 +4,11 @@ defined('BASEPATH') OR exit('Forbidden');
 class Ajax extends MY_Controller
 {
 
-    /*public function __construct() {
-        //construct will kick and redirect if not logged in or if banned
-        parent::__construct();
+    public function __construct() {
 
-        //these will load only if parent didn't redirect
+        parent::__construct();
         $this->load->model('user_model');
-    }*/
+    }
 
     public function send()
     {
@@ -152,7 +150,7 @@ class Ajax extends MY_Controller
                     $cookie = array(
                         'name' => 'UserCookie',
                         'value' => true,
-                        'expire' => 300,  //expires in one month if user doesn't log out
+                        'expire' => 2592000,  //expires in one month if user doesn't log out
                         'domain' => '.intwebdev.local',
                         'path' => '/',
 
