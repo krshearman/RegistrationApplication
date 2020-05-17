@@ -41,9 +41,11 @@ Notes: No questions or comments at this time
 }
 
 .userheading{
-    float: left;
-    margin-top: 60px;
+    margin: 50px auto;
+   /* margin-top: 50px;
+    margin-bottom: 25px;*/
 }
+
 
 /* Registration form */
 
@@ -125,8 +127,9 @@ Notes: No questions or comments at this time
 
 .userbutton{
 
-    margin-top: 30px;
-    float: right;
+    margin-top: 50px;
+    width: 75%;
+    /*float: right;*/
 }
 
 .my-button {
@@ -231,6 +234,12 @@ footer a:hover {
 @media screen and (min-width: 992px) {
     .dd-menu a {
         color: white;
+    }
+}
+
+@media screen and (min-width: 250px){
+    .usercard{
+        width: 100%;
     }
 }
 
